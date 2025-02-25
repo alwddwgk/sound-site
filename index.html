@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="us">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #audio-button {
+            width: 300px;
+            height: 300px;
+            cursor: pointer;
+            border: none;
+            background: url('button.png') no-repeat center center;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <button id="audio-button"></button>
+    <audio id="main-audio">
+        <source src="main.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        const audioButton = document.getElementById('audio-button');
+        const mainAudio = document.getElementById('main-audio');
+        mainAudio.volume = 1.0;
+        audioButton.addEventListener('click', function() {
+            mainAudio.play();
+        });
+    </script>
+</body>
+</html>
